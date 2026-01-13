@@ -1,9 +1,12 @@
+import Form from "./components/Form/Form"
+import Header from "./components/Header/Header"
 
 function App() {
 
   return (
     <>
-      <h1 className="text-red-800">yuvaLink</h1>
+      <Header />
+      <Form />
     </>
   )
 }
