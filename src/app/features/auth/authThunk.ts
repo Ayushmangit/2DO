@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api/axios";
-import type { ApiResponse } from "../../types/User";
 
 export const registerUser = createAsyncThunk(
 	'auth/register',

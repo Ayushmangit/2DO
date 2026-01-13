@@ -15,7 +15,7 @@ interface AuthState {
 const initialState: AuthState = {
 	isAuthenticated: false,
 	userData: null,
-	loading: true,
+	loading: false,
 	token: localStorage.getItem('token'),
 	error: null
 }
