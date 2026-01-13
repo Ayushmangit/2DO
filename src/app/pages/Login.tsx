@@ -14,7 +14,7 @@ export default function Login() {
 
 	useEffect(() => {
 		if (userData) {
-			navigate("/dashboard")
+			navigate("/home")
 		}
 	}, [userData, navigate])
 

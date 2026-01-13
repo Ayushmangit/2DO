@@ -13,7 +13,7 @@ export default function Register() {
 
 	useEffect(() => {
 		if (userData) {
-			navigate("/dashboard")
+			navigate("/home")
 		}
 	}, [userData, navigate])
 

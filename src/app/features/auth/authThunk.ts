@@ -36,13 +36,12 @@ export const logoutUser = createAsyncThunk(
 
 export const getCurrentUser = createAsyncThunk(
 	"auth/me",
-	async (_, thunkAPI) => {
+	async () => {
 		try {
 			const response = await api.get("auth/me")
 			return response.data
-		} catch (error: any) {
-			localStorage.removeItem("token")
-			return thunkAPI.rejectWithValue(error.response.data.message)
+		} catch {
+			return null
 		}
 	}
 )

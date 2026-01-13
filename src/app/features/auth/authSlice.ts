@@ -55,9 +55,18 @@ export const authSlice = createSlice({
 				state.userData = null
 				localStorage.removeItem("token")
 			})
-			.addCase(getCurrentUser.fulfilled, (state, action: PayloadAction<ApiResponse>) => {
-				state.userData = action.payload.user
+			.addCase(getCurrentUser.pending, (state) => {
+				state.loading = true;
+			})
+			.addCase(getCurrentUser.fulfilled, (state, action) => {
+				state.userData = action.payload
 				state.isAuthenticated = true
+				state.loading = false
+			})
+			.addCase(getCurrentUser.rejected, (state) => {
+				state.userData = null
+				state.loading = false
+				state.isAuthenticated = false
 			})
 	}
 })
