@@ -13,11 +13,7 @@ interface AuthState {
 }
 const token = localStorage.getItem("token")
 
-const Ayushman = {
-	id: "222",
-	email: "chauhanayushman@gmail.com",
-	name: "Ayushman",
-}
+
 const initialState: AuthState = {
 	isAuthenticated: !!token,
 	userData: null,
@@ -64,8 +60,8 @@ export const authSlice = createSlice({
 			.addCase(getCurrentUser.pending, (state) => {
 				state.loading = true;
 			})
-			.addCase(getCurrentUser.fulfilled, (state) => {
-				state.userData = Ayushman
+			.addCase(getCurrentUser.fulfilled, (state, action) => {
+				state.userData = action.payload
 				state.isAuthenticated = true
 				state.loading = false
 			})
