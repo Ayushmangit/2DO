@@ -36,12 +36,12 @@ export const logoutUser = createAsyncThunk(
 
 export const getCurrentUser = createAsyncThunk(
 	"auth/me",
-	async () => {
+	async (_, thunkApi) => {
 		try {
 			const response = await api.get("auth/me")
 			return response.data
-		} catch {
-			return null
+		} catch (error: any) {
+			return thunkApi.rejectWithValue(error.response.data.message)
 		}
 	}
 )

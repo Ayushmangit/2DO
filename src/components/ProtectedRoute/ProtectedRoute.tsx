@@ -7,6 +7,7 @@ export interface Props {
 }
 
 export default function ProtectedRoute({ children }: Props) {
-	const { userData } = useAppSelector(state => state.auth)
-	return userData ? <>{children}</> : <Navigate to="/login" replace />
+	const { loading, isAuthenticated } = useAppSelector(state => state.auth)
+	if (loading) return null
+	return isAuthenticated ? <>{children}</> : <Navigate to="/login" replace />
 }

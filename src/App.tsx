@@ -13,7 +13,10 @@ import PublicPage from "./app/pages/PublicPage"
 function App() {
   const dispatch = useAppDispatch()
   useEffect(() => {
-    dispatch(getCurrentUser());
+    const token = localStorage.getItem("token")
+    if (token) {
+      dispatch(getCurrentUser());
+    }
   }, [dispatch])
 
   return (
