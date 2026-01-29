@@ -4,7 +4,7 @@ import api from "../../api/axios";
 export const registerUser = createAsyncThunk(
 	'auth/register',
 	async (
-		data: { name: string, email: string, password: string }, thunkAPI
+		data: { name: string, email: string, password: string, password_confirmation: string }, thunkAPI
 	) => {
 		try {
 			const response = await api.post("auth/register", data)

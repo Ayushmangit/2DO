@@ -36,7 +36,6 @@ export default function Register() {
 					Create Account 🚀
 				</h2>
 
-				{/* Name */}
 				<div className="mb-4">
 					<input
 						type="text"
@@ -51,7 +50,6 @@ export default function Register() {
 					)}
 				</div>
 
-				{/* Email */}
 				<div className="mb-4">
 					<input
 						type="email"
@@ -66,7 +64,6 @@ export default function Register() {
 					)}
 				</div>
 
-				{/* Password */}
 				<div className="mb-4">
 					<input
 						type="password"
@@ -80,15 +77,26 @@ export default function Register() {
 						</p>
 					)}
 				</div>
+				<div className="mb-4">
+					<input
+						type="password"
+						placeholder="Confirm Password"
+						{...register("password_confirmation", { required: "Password is required" })}
+						className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+					/>
+					{errors.password && (
+						<p className="mt-1 text-sm text-red-500">
+							{errors.password.message}
+						</p>
+					)}
+				</div>
 
-				{/* Server Error */}
 				{error && (
 					<p className="mb-4 rounded-md bg-red-100 px-3 py-2 text-sm text-red-600">
 						{error}
 					</p>
 				)}
 
-				{/* Register Button */}
 				<button
 					type="submit"
 					disabled={loading}
@@ -97,14 +105,12 @@ export default function Register() {
 					{loading ? "Registering..." : "Register"}
 				</button>
 
-				{/* Divider */}
 				<div className="my-6 flex items-center">
 					<div className="h-px flex-1 bg-gray-300" />
 					<span className="mx-2 text-sm text-gray-500">OR</span>
 					<div className="h-px flex-1 bg-gray-300" />
 				</div>
 
-				{/* Back to Login */}
 				<p className="mb-2 text-center text-sm text-gray-600">
 					Already have an account?
 				</p>

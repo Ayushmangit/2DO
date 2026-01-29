@@ -16,5 +16,6 @@ export interface LoginUserT {
 
 export interface RegisterUserT extends LoginUserT {
 	name: string
+	password_confirmation: string
 }
 
