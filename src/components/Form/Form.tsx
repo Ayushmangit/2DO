@@ -24,9 +24,13 @@ function Form() {
 
 	return (
 		<>
+			<div className="flex flex-col text-white text-3xl mx-auto mt-8 max-w-md">
+				<h1>2DO's </h1>
+				<p>Dhee ke lodo kaam karlo</p>
+			</div>
 			<form
 				onSubmit={handleSubmit}
-				className="mx-auto mt-8 flex w-full max-w-md items-center gap-3 rounded-xl bg-white p-4 shadow-sm"
+				className="mx-auto mt-1 flex w-full max-w-md items-center gap-3 rounded-xl p-4 shadow-sm"
 			>
 				<input
 					type="text"
@@ -49,7 +53,7 @@ function Form() {
 
 			<ul className="mx-auto mt-4 w-full max-w-md space-y-2">
 				{todos.map(todo => (
-					<li key={todo.id} className="rounded-lg bg-white p-3 shadow-sm">
+					<li key={todo.id} className="text-white border-[#f9f4f5] border-b-2 p-3">
 						{todo.task}
 					</li>
 				))}

@@ -24,7 +24,7 @@ function Header() {
 
 				<button
 					onClick={handleLogout}
-					className="rounded-md bg-gray-800 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-gray-200"
+					className="rounded-md bg-gray-800 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-gray-500 "
 				>
 					Logout
 				</button>
