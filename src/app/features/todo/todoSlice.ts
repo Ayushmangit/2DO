@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { createTodo, getAllTodos } from "./todoThunk"
 
-interface Todo {
+export interface Todo {
 	id: string
 	task: string
 	completed: boolean

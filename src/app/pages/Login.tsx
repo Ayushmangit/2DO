@@ -27,13 +27,13 @@ export default function Login() {
 	}
 
 	return (
-		<div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
+		<div className="flex min-h-screen items-center justify-center bg-[#000000] px-4">
 			<form
 				onSubmit={handleSubmit(onSubmit)}
-				className="w-full max-w-md rounded-xl bg-white p-8 shadow-lg"
+				className="w-full max-w-md rounded-xl bg-[#c8b8db] p-8 shadow-lg"
 			>
-				<h2 className="mb-6 text-center text-2xl font-bold text-gray-800">
-					Welcome Back 👋
+				<h2 className="mb-6 text-center text-2xl font-bold text-[#502f4c]">
+					Welcome Back
 				</h2>
 
 				{/* Email */}
@@ -42,7 +42,8 @@ export default function Login() {
 						type="email"
 						placeholder="Email"
 						{...register("email", { required: "Email is required" })}
-						className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+						className="w-full rounded-md border border-gray-300 px-4 py-2
+						           focus:border-[#502f4c] focus:outline-none focus:ring-1 focus:ring-[#502f4c]"
 					/>
 					{errors.email && (
 						<p className="mt-1 text-sm text-red-500">
@@ -57,7 +58,8 @@ export default function Login() {
 						type="password"
 						placeholder="Password"
 						{...register("password", { required: "Password is required" })}
-						className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+						className="w-full rounded-md border border-gray-300 px-4 py-2
+						           focus:border-[#502f4c] focus:outline-none focus:ring-1 focus:ring-[#502f4c]"
 					/>
 					{errors.password && (
 						<p className="mt-1 text-sm text-red-500">
@@ -77,7 +79,9 @@ export default function Login() {
 				<button
 					type="submit"
 					disabled={loading}
-					className="w-full rounded-md bg-blue-600 py-2 font-semibold text-white transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:bg-blue-400"
+					className="w-full rounded-md bg-[#502f4c] py-2 font-semibold
+					           text-[#f9f4f5] transition hover:bg-[#673c62]
+					           disabled:cursor-not-allowed disabled:bg-[#000000]"
 				>
 					{loading ? "Logging in..." : "Login"}
 				</button>
@@ -89,7 +93,7 @@ export default function Login() {
 					<div className="h-px flex-1 bg-gray-300" />
 				</div>
 
-				{/* Register */}
+				{/* Register Redirect */}
 				<p className="mb-2 text-center text-sm text-gray-600">
 					Don’t have an account?
 				</p>
@@ -97,7 +101,9 @@ export default function Login() {
 				<button
 					type="button"
 					onClick={() => navigate("/register")}
-					className="w-full rounded-md border border-gray-300 py-2 font-semibold text-gray-700 transition hover:bg-gray-100"
+					className="w-full rounded-md border border-gray-300 py-2 font-semibold
+					           bg-[#271725] text-[#f9f4f5]
+					           transition hover:bg-[#502f4c]"
 				>
 					Register
 				</button>
