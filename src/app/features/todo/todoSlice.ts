@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { createTodo, getAllTodos } from "./todoThunk"
+import { createTodo, getAllTodos, updateTodo } from "./todoThunk"
 
 export interface Todo {
 	id: string
@@ -40,6 +40,12 @@ const todoSlice = createSlice({
 			.addCase(getAllTodos.rejected, (state, action) => {
 				state.loading = false
 				state.error = action.payload as string
+			})
+			.addCase(updateTodo.fulfilled, (state, action) => {
+				const idx = state.todos.findIndex(todo => todo.id === action.payload.id)
+				if (idx !== -1) {
+					state.todos[idx] = action.payload
+				}
 			})
 	}
 })

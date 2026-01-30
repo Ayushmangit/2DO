@@ -30,4 +30,16 @@ export const getAllTodos = createAsyncThunk(
 		}
 	}
 )
-
+export const updateTodo = createAsyncThunk(
+	'todos/update',
+	async (
+		{ id, task }: { id: string, task: string }, thunkAPI
+	) => {
+		try {
+			const response = await api.patch(`todos/${id}`, { task })
+			return response.data
+		} catch (error: any) {
+			return thunkAPI.rejectWithValue(error.response.data.msg)
+		}
+	}
+)

@@ -26,13 +26,11 @@ function Form() {
 
 	return (
 		<div className="flex flex-col items-start gap-5 p-20 mx-auto max-w-md font-display">
-			{/* heading */}
 			<div className="flex flex-col ">
 				<h1 className="text-3xl">2DO's </h1>
 				<p className="font-extralight">Organise your daily tasks</p>
 			</div>
 
-			{/* Top Section*/}
 			<div className="flex justify-between min-w-md">
 				<div>
 					<div className="flex items-center gap-2">
@@ -54,7 +52,7 @@ function Form() {
 					</div>
 
 				</div>
-				<div>
+				<form onSubmit={handleSubmit}>
 					<button
 						type="submit"
 						className="rounded-lg bg-blue-600 px-5 py-2 font-semibold transition hover:bg-blue-700 active:scale-95 disabled:cursor-not-allowed disabled:bg-blue-400 flex items-center"
@@ -63,7 +61,7 @@ function Form() {
 						New
 
 					</button>
-				</div>
+				</form>
 			</div>
 
 			<ul className=" mt-4 w-full max-w-md space-y-2 list-none">
